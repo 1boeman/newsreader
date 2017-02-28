@@ -2,22 +2,26 @@
 
 require 'rss'
 require 'nokogiri'
+load 'parse_util.rb'
 
 def main
   if ARGV.length < 2
     puts "Usage: parse.rb <INPUT_FILE> <OUTPUT_DIR>"
   else
-    getData ARGV[0]
+    getData ARGV[0], ARGV[1]
   end
 end
 
-def getData (xml_file)
-  doc = File.open(xml_file) { |f| Nokogiri::XML(f) }
+def getData (xml_file_input, output_dir)
+  puts output_dir
+  doc = File.open(xml_file_input) { |f| Nokogiri::XML(f) }
   doc.xpath('//feed').each{ | feed |
     case feed['type']
       when 'rss'
         begin
-          parseRSS(feed.text)
+          xml = parseRSS(feed.text)
+          output_path =  output_dir + '/' + Putil.url_name_to_file(feed.text)
+          File.write(output_path,xml)
         rescue Exception => e
           puts e.message
           puts feed 
@@ -26,7 +30,6 @@ def getData (xml_file)
     end
   }
 end
-
 
 def parseRSS(url)
   puts url
@@ -47,17 +50,24 @@ def parseRSS(url)
           }
         when 'atom'
           puts 'atom'
-          rss.items.each { |item| puts item.title.content }
+          rss.items.each { |item|
+            xml.item_ { 
+              xml.title_  item.title.content 
+              xml.link_   item.link.href
+              xml.pubDate_  item.updated.content
+              xml.description_ item.summary.content
+            }
+          }
         else 
           puts 'other'
           rss.items.each { |item|
             
-            puts item.title 
+            puts "feed_type not found: " + item.title 
           }
       end
     }
   end
-  puts builder.to_xml
+  builder.to_xml
 end
 
 main
