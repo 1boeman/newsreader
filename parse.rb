@@ -6,28 +6,41 @@ load 'parse_util.rb'
 
 def main
   if ARGV.length < 2
-    puts "Usage: parse.rb <INPUT_FILE> <OUTPUT_DIR>"
+    puts "Usage: parse.rb <INPUT_FILE_OR_DIR> <OUTPUT_DIR>"
   else
     getData ARGV[0], ARGV[1]
+
   end
 end
 
 def getData (xml_file_input, output_dir)
-  puts output_dir
-  doc = File.open(xml_file_input) { |f| Nokogiri::XML(f) }
-  doc.xpath('//feed').each{ | feed |
-    case feed['type']
-      when 'rss'
-        begin
-          xml = parseRSS(feed.text)
-          output_path =  output_dir + '/' + Putil.url_name_to_file(feed.text)
-          File.write(output_path,xml)
-        rescue Exception => e
-          puts e.message
-          puts feed 
-          next
-        end
-    end
+  files = []
+  if File.directory?(xml_file_input)  
+    puts "===> Input directory:" + xml_file_input
+    files = Dir[xml_file_input+"/*.xml"]
+  else
+    puts "===> Input file: " + xml_file_input
+    files.push(xml_input_fil)
+  end
+  puts "===> Output directory: "+output_dir
+ 
+  files.each { |file_path|
+    doc = File.open(file_path) { |f| Nokogiri::XML(f) }
+    doc.xpath('//feed').each{ | feed |
+      case feed['type']
+        when 'rss'
+          begin
+            xml = parseRSS(feed.text)
+            output_path =  output_dir + '/' + Putil.url_name_to_file(feed.text)
+            File.write(output_path,xml)
+            puts "** Written to: " +output_path
+          rescue Exception => e
+            puts e.message
+            puts feed 
+            next
+          end
+      end
+    }
   }
 end
 
