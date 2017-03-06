@@ -16,7 +16,7 @@ transform() {
   FILE_NAME=$(basename "$1")
   OUTPUT_FILE=$2"/"$FILE_NAME
   echo $OUTPUT_FILE
-  saxonb-xslt -strip:none -s:"$1" -xsl:"page.xsl" -o:"$OUTPUT_FILE"
+  saxonb-xslt -strip:none -s:"$1" -xsl:"page.xsl" -o:"$OUTPUT_FILE" data_path="../nieuws_iswaar_data/"
   return 0 
 }
 
