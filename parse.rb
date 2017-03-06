@@ -2,6 +2,7 @@
 
 require 'rss'
 require 'nokogiri'
+require 'sanitize'
 load 'parse_util.rb'
 
 def main
@@ -58,7 +59,7 @@ def parseRSS(url)
               xml.title_  item.title
               xml.link_   item.link
               xml.pubDate_  item.pubDate
-              xml.description_  item.description
+              xml.description_  Sanitize.clean(item.description)
             }
           }
         when 'atom'
@@ -68,7 +69,7 @@ def parseRSS(url)
               xml.title_  item.title.content 
               xml.link_   item.link.href
               xml.pubDate_  item.updated.content
-              xml.description_ item.summary.content
+              xml.description_ Sanitize.clean(item.summary.content)
             }
           }
         else 
