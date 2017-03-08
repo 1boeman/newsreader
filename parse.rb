@@ -10,7 +10,29 @@ def main
     puts "Usage: parse.rb <INPUT_FILE_OR_DIR> <OUTPUT_DIR>"
   else
     getData ARGV[0], ARGV[1]
+    makeMenu ARGV[0]
+  end
+end
 
+def makeMenu(xml_dir_input)
+  if File.directory?(xml_dir_input)  
+    puts "===> Input directory:" + xml_dir_input
+    files = Dir[xml_dir_input+"/*.xml"]
+    puts files
+    builder = Nokogiri::XML::Builder.new do |xml|
+      xml.ul(:class => 'navigation') {
+        files.each { |f|
+          read_doc = File.open(f) { |read_file| Nokogiri::XML(read_file) }
+          title = read_doc.xpath('//title')[0].text
+          xml.li {
+            xml.a(:href => '/' + File.basename(f).gsub(/\.xml$/i,'.html')) { xml.text title } 
+          }   
+        }
+      }
+    end
+
+    output_path =  xml_dir_input + '/menu.html'
+    File.write(output_path,builder.to_xml)
   end
 end
 
@@ -21,7 +43,7 @@ def getData (xml_file_input, output_dir)
     files = Dir[xml_file_input+"/*.xml"]
   else
     puts "===> Input file: " + xml_file_input
-    files.push(xml_input_fil)
+    files.push(xml_file_input)
   end
   puts "===> Output directory: "+output_dir
  

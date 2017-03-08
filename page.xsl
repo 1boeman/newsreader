@@ -2,12 +2,22 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
 <xsl:output indent="yes"/>
 <xsl:param name="data_path" />
+<xsl:param name="conf_path" />
+
+<xsl:variable name="menu" select="document(concat($conf_path,'/','menu.html'))/ul" />
+
 <xsl:template name="start" match="/">
   <html>
+    <title><xsl:value-of select="//title"/></title>
     <body>
+      <xsl:copy-of select="$menu" />
       <xsl:apply-templates/>
     </body>
   </html>
+</xsl:template>
+
+<xsl:template match="title">
+  <h1><xsl:value-of select="."/></h1>
 </xsl:template>
 
 <xsl:template match="section">
