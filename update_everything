@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./parse.rb ../nieuws_iswaar_conf ../nieuws_iswaar_data
+./transform.sh ../nieuws_iswaar_conf ../nieuws ../nieuws_iswaar_data

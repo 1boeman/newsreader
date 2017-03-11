@@ -1,7 +1,9 @@
 #!/usr/bin/ruby
 
 require 'rss'
+require 'mechanize'
 require 'nokogiri'
+require 'htmlentities'
 require 'sanitize'
 load 'parse_util.rb'
 
@@ -69,35 +71,40 @@ end
 
 def parseRSS(url)
   puts url
-  rss = RSS::Parser.parse(url, false)
+  agent = Mechanize.new { |agent|
+    agent.user_agent_alias = "Mac Firefox"
+    agent.agent.http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  }
+  response = agent.get(url)
+
+  rss = RSS::Parser.parse(response.content,false)
   builder = Nokogiri::XML::Builder.new do |xml|
     xml.news {
-      
       case rss.feed_type
         when 'rss'
           puts 'rss'
+          xml.feed_title_ rss.channel.title      
           rss.items.each { |item| 
             xml.item_ {
               xml.title_  item.title
               xml.link_   item.link
-              xml.pubDate_  item.pubDate
               xml.description_  Sanitize.clean(item.description)
             }
           }
         when 'atom'
           puts 'atom'
+          xml.feed_title_ rss.title
+      
           rss.items.each { |item|
             xml.item_ { 
               xml.title_  item.title.content 
               xml.link_   item.link.href
-              xml.pubDate_  item.updated.content
               xml.description_ Sanitize.clean(item.summary.content)
             }
           }
         else 
           puts 'other'
           rss.items.each { |item|
-            
             puts "feed_type not found: " + item.title 
           }
       end
