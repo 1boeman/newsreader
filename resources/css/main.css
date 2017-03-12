@@ -1,5 +1,61 @@
-.description {
-  display:none
+body {
+  background:whitesmoke;
+  text-rendering: optimizeLegibility;
+}
+.nav li{
+  font-size:18px;
+}
+
+p.description {
+  display:none;
+  font-size:18px;
+  background:white;
+  padding:16px 8px 16px 16px;
+  line-height:1.6;
+  font-family:Georgia;
+}
+
+.description.visible {
+  display:block
+}
+
+.feed{
+  background-color:snow;
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
+
 }
 
 
+h2 {
+  background:#333;
+  color:white;
+  padding:4px 16px;
+}
+
+h3 {
+  font-size:18px;
+  line-height:1.6;
+  padding-left:16px;
+  padding-right:8px;
+  font-weight:bold;
+}
+h3 a{
+  color:#325d81
+}
+.external_link{
+}

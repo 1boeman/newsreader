@@ -22,7 +22,7 @@ def makeMenu(xml_dir_input)
     files = Dir[xml_dir_input+"/*.xml"]
     puts files
     builder = Nokogiri::XML::Builder.new do |xml|
-      xml.ul(:class => 'navigation') {
+      xml.ul(:class => 'nav nav-pills nav-justified') {
         files.each { |f|
           read_doc = File.open(f) { |read_file| Nokogiri::XML(read_file) }
           title = read_doc.xpath('//title')[0].text
@@ -32,7 +32,6 @@ def makeMenu(xml_dir_input)
         }
       }
     end
-
     output_path =  xml_dir_input + '/menu.html'
     File.write(output_path,builder.to_xml)
   end
@@ -93,8 +92,7 @@ def parseRSS(url)
           }
         when 'atom'
           puts 'atom'
-          xml.feed_title_ rss.title
-      
+          xml.feed_title_ rss.title.content
           rss.items.each { |item|
             xml.item_ { 
               xml.title_  item.title.content 
