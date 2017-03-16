@@ -9,6 +9,8 @@
     <html>
       <head>
         <title><xsl:value-of select="//title"/></title>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
           <meta http-equiv="expires" content="Sat, 31 Oct 2014 00:00:00 GMT" />
           <meta http-equiv="pragma" content="no-cache" />
@@ -70,7 +72,6 @@
           <xsl:attribute name="href">
             <xsl:value-of select="./link" />
           </xsl:attribute>
-            <span class="glyphicon glyphicon-new-window"></span>
             <span>&#160;
             <xsl:value-of select="./link" />
             </span>

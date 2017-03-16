@@ -8,7 +8,7 @@ body {
 
 p.description {
   display:none;
-  font-size:18px;
+  font-size:16px;
   background:white;
   padding:16px 8px 16px 16px;
   line-height:1.6;
@@ -18,10 +18,12 @@ p.description {
 .description.visible {
   display:block
 }
-
-.feed{
+.feed {
+  overflow:hidden;
   background-color:snow;
-  /* These are technically the same, but use both */
+}
+.feed a.external_link{ 
+/* These are technically the same, but use both */
   overflow-wrap: break-word;
   word-wrap: break-word;
 
@@ -36,25 +38,24 @@ p.description {
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;
-
-
 }
 
-
 h2 {
+  font-size:20px;
   background:#333;
   color:white;
   padding:4px 16px;
 }
 
 h3 {
-  font-size:18px;
+  font-size:16px;
   line-height:1.6;
   padding-left:16px;
   padding-right:8px;
   font-weight:bold;
 }
 h3 a{
+  display:block;
   color:#325d81
 }
 .external_link{

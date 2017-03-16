@@ -75,7 +75,8 @@ def parseRSS(url)
     agent.agent.http.verify_mode = OpenSSL::SSL::VERIFY_NONE
   }
   response = agent.get(url)
-
+  i=0
+  max_items = 10
   rss = RSS::Parser.parse(response.content,false)
   builder = Nokogiri::XML::Builder.new do |xml|
     xml.news {
@@ -84,21 +85,25 @@ def parseRSS(url)
           puts 'rss'
           xml.feed_title_ rss.channel.title      
           rss.items.each { |item| 
+            i+=1
             xml.item_ {
               xml.title_  item.title
               xml.link_   item.link
               xml.description_  Sanitize.clean(item.description)
             }
+            break if i > max_items
           }
         when 'atom'
           puts 'atom'
           xml.feed_title_ rss.title.content
           rss.items.each { |item|
+            i+=1
             xml.item_ { 
               xml.title_  item.title.content 
               xml.link_   item.link.href
               xml.description_ Sanitize.clean(item.summary.content)
             }
+            break if i > max_items
           }
         else 
           puts 'other'
