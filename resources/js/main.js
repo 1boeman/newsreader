@@ -7,6 +7,8 @@ $(function(){
       .toggle('visible');
   });
 
-
-
+  $.scrollUp({  
+    animation: 'fade',
+    scrollImg: { active: true, type: 'background' }
+  });
 });

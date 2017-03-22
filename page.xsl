@@ -28,6 +28,7 @@
           </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="/resources/js/jquery.scrollUp.min.js"></script>
         <script src="/resources/js/main.js"></script>
       </body>
     </html>
@@ -53,7 +54,7 @@
   </xsl:template>
 
   <xsl:template match="//feed_title">
-    <h2><xsl:value-of select="." /></h2>
+    <h2><xsl:value-of select="." disable-output-escaping="yes" /></h2>
   </xsl:template>
 
   <xsl:template match="//item">
@@ -62,17 +63,17 @@
         <xsl:attribute name="href">
           <xsl:value-of select="./link" />
         </xsl:attribute>
-        <xsl:value-of select="./title" />
+        <xsl:value-of select="./title" disable-output-escaping="yes" />
         </a>
       </h3>
       <p class="description">
-        <xsl:value-of select="./description" />
+        <xsl:value-of select="./description" disable-output-escaping="yes" />
         <br />
         <a target="_blank" class="external_link">
           <xsl:attribute name="href">
             <xsl:value-of select="./link" />
           </xsl:attribute>
-            <span>&#160;
+            <span>
             <xsl:value-of select="./link" />
             </span>
         </a>
