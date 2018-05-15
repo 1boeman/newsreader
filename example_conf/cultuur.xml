@@ -1,0 +1,22 @@
+<page>
+  <title>Wetenschap/ Cultuur</title>
+  <section>
+    <feed type="rss">https://aeon.co/feed.rss</feed>
+    <feed type="rss">http://feeds.nature.com/nature/rss/current</feed>
+    <feed type="rss">https://phys.org/rss-feed/</feed>
+    <feed type="rss">http://www.space.com/home/feed/site.xml</feed>
+ 
+   <feed type="rss">https://culturematters.wordpress.com/feed/</feed> 
+  </section>
+ <section>
+   <feed type="rss">http://allegralaboratory.net/feed</feed>
+ 
+  <feed type="rss">http://wayneandwax.com/?feed=rss</feed>
+   <feed type="rss">http://www.popsci.com/rss.xml?dom=psc&amp;loc=featrow&amp;lnk=main-feed</feed>
+   <feed type="rss">https://rss.sciencedaily.com/all.xml</feed>
+  </section>
+ <section>
+   <feed type="rss">http://feeds.newscientist.com/</feed>
+ <feed type="rss">https://savageminds.org/feed/</feed>
+ </section>
+</page>

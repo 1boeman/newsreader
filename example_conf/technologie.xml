@@ -1,0 +1,23 @@
+<page>
+  <title>Technologie/ internet</title>
+  <section>
+    <feed type="rss">http://rss.slashdot.org/Slashdot/slashdot</feed>
+   <feed type="rss">http://feeds.wired.com/wired/index</feed>
+
+    <feed type="rss">http://www.nu.nl/feeds/rss/internet.rss</feed>
+  </section>
+ <section>
+   <feed type="rss">http://feeds.feedburner.com/tweakers/mixed</feed>
+   <feed type="rss">https://futurism.com/feed/</feed>
+    <feed type="rss">http://feeds.nos.nl/nosnieuwstech</feed>
+  <feed type="rss">https://betanews.com/feed/</feed>
+   <feed type="rss">http://www.geek.com/feed/</feed>
+ </section>
+ <section>
+ <feed type="rss">http://www.techradar.com/rss</feed>
+<feed type="rss">https://www.emerce.nl/nieuws/feed</feed>
+  <feed type="rss">http://feeds.feedburner.com/cnet/tcoc?format=xml</feed>
+  <feed type="rss">http://www.echojs.com/rss</feed>
+
+ </section>
+</page>

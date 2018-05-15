@@ -1,0 +1,23 @@
+<page>
+  <title>Internationaal nieuws</title>
+  <section>
+    <feed type="rss">http://feeds.bbci.co.uk/news/world/rss.xml</feed>
+    <feed type="rss">http://feeds.reuters.com/reuters/topNews?format=xml</feed>
+    <feed type="rss">http://www.aljazeera.com/Services/Rss/?PostingId=2007731105943979989</feed>
+    <feed type="rss">http://feeds.skynews.com/feeds/rss/world.xml</feed>
+    <feed type="rss">http://rss.cnn.com/rss/cnn_latest.rss</feed>
+  </section>
+ <section>
+    <feed type="rss">https://www.theguardian.com/uk/rss</feed>
+    <feed type="rss">http://rss.cnn.com/rss/cnn_latest.rss</feed>
+    <feed type="rss">http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml</feed> 
+    <feed type="rss">http://feeds.feedburner.com/ndtvnews-top-stories</feed>
+    <feed type="rss">https://news.google.com/news/rss/headlines/section/topic/WORLD.nl_nl/Buitenland?ned=nl_nl&amp;hl=nl&amp;gl=NL</feed>
+ </section>
+ <section>
+     <feed type="rss">https://www.rt.com/rss/</feed>
+     <feed type="rss">http://www.cbc.ca/cmlink/rss-topstories</feed>
+    <feed type="rss">http://www.rte.ie/news/rss/news-headlines.xml</feed>
+    <feed type="rss">http://hosted2.ap.org/atom/APDEFAULT/3d281c11a96b4ad082fe88aa0db04305</feed>
+</section>
+</page>

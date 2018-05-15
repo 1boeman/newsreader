@@ -1,0 +1,27 @@
+<page>
+  <title>NL lokaal nieuws</title>
+  <section>
+    <feed type="rss">http://www.at5.nl/feeds/at5/nieuws/V100/nieuws</feed>
+    <feed type="rss">http://www.nhnieuws.nl/feeds/rtvnh/nieuws/V100/nieuws</feed>
+    <feed type="rss">http://rss.politie.nl/rss/ab/gemeenten/noord-holland/amsterdam.xml</feed>
+    <feed type="rss">http://www.dvhn.nl/?service=rssOwnArticlesStandard</feed>
+  </section>
+  <section>
+    <feed type="rss">https://www.provinciegroningen.nl/rss/actueel/nieuws/</feed>
+    <feed type="rss">http://www.tubantia.nl/home/rss.xml</feed>
+    <feed type="rss">http://www.bd.nl/home/rss.xml</feed>
+    <feed type="rss">http://www.ed.nl/home/rss.xml</feed>
+    <feed type="rss">http://www.dvhn.nl/?service=rssOwnArticlesStandard</feed>
+    <feed type="rss">http://www.omroepflevoland.nl/RSS/rss.aspx</feed>
+    <feed type="rss">http://www.lc.nl/?service=rssOwnArticlesStandard</feed>
+    <feed type="rss">http://www.pzc.nl/home/rss.xml</feed>
+    
+ </section>
+  <section>
+    <feed type="rss">http://www.bndestem.nl/home/rss.xml</feed> 
+    <feed type="rss">http://www.destentor.nl/home/rss.xml</feed>
+    <feed type="rss">https://www.utrecht.nl/nieuws/rss.xml</feed>
+    <feed type="rss">https://www.1limburg.nl/rss/sectie/ceba45ea-1974-4840-bb59-ec82a7407cbe</feed>
+    <feed type="rss">https://ameland.wordpress.com/feed/</feed>
+ </section>
+</page>

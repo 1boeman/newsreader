@@ -1,4 +1,6 @@
 #!/bin/bash
-cd /home/joriso/web/iswaar.nl/nieuws_iswaar_get/
-./parse.rb ../nieuws_iswaar_conf ../nieuws_iswaar_data
-./transform.sh ../nieuws_iswaar_conf ../nieuws ../nieuws_iswaar_data
+cd "$(dirname "$0")"
+source configfile
+./parse.rb $CONFDIR $DATADIR > "$PUBLIC/last_run.txt"
+./transform.sh $CONFDIR $PUBLIC $DATADIR >> "$PUBLIC/last_run.txt"
+
