@@ -1,6 +1,7 @@
 body {
-  background:whitesmoke;
+  background:black;
   text-rendering: optimizeLegibility;
+  color:Snow;
 }
 .nav li{
   font-size:18px;
@@ -9,7 +10,7 @@ body {
 p.description {
   display:none;
   font-size:16px;
-  background:white;
+  background:#333;
   padding:16px 8px 16px 16px;
   line-height:1.6;
   font-family:Georgia;
@@ -20,7 +21,7 @@ p.description {
 }
 .feed {
   overflow:hidden;
-  background-color:snow;
+  background-color:#222;
 }
 .feed a.external_link{ 
 /* These are technically the same, but use both */
@@ -38,12 +39,15 @@ p.description {
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;
+  color:LightSteelBlue; 
+  margin-top:1rem;
+  display:block;
 }
 
 h2 {
   font-size:20px;
-  background:#333;
-  color:white;
+  background:LightSlateGray ;
+  color:snow;
   padding:4px 16px;
 }
 
@@ -52,13 +56,19 @@ h3 {
   line-height:1.6;
   padding-left:16px;
   padding-right:8px;
-  font-weight:bold;
 }
 h3 a{
   display:block;
-  color:#325d81
+  color:#efefef;
+  color:LightSteelBlue; 
 }
-.external_link{
+
+a{
+ color:LightSteelBlue ;
+
+}
+a:focus, a:hover{
+  color:white;
 }
 
 
@@ -69,5 +79,9 @@ h3 a{
   width: 38px;    /* Width of image */
   height: 38px;   /* Height of image */
 }
-                                                                                                                                                                                                                  
-                       
+.nav > li > a:focus, .nav > li > a:hover {
+	text-decoration: none;
+	background-color: #666;
+	color:white ;
+}  
+

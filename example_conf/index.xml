@@ -2,7 +2,6 @@
   <title>NL nieuws</title>
   <section>
     <feed type="rss">http://feeds.nos.nl/nosnieuwsalgemeen</feed>	
-    <feed type="rss">https://news.google.com/news/rss/headlines/section/topic/NATION.nl_nl/Nederland?ned=nl_nl&amp;hl=nl&amp;gl=NL</feed>
     <feed type="rss">https://fd.nl/?rss</feed>
     <feed type="rss">http://feeds.nos.nl/nieuwsuuralgemeen</feed>
   </section>
@@ -10,13 +9,15 @@
     <feed type="rss">http://www.nu.nl/feeds/rss/algemeen.rss</feed>
     <feed type="rss">http://www.volkskrant.nl/nieuws/rss.xml</feed>
     <feed type="rss">https://www.trouw.nl/home/rss.xml</feed>
-    <feed type="rss">http://www.parool.nl/cultuur/muziek/rss.xml</feed>
+    <feed type="rss">https://www.parool.nl/voorpagina/rss.xml</feed>
     <feed type="rss">http://www.ad.nl/nieuws/rss.xml</feed>
     <feed type="rss">https://www.telegraaf.nl/rss</feed> 
-    <feed type="rss">https://www.nd.nl/Rss/b1QlyivKRqONxg5layF1wQ==/Feed.lynkx</feed>
+    <feed type="rss">https://www.nd.nl/rss</feed>
     <feed type="rss">https://www.nrc.nl/rss/</feed>
+    <feed type="rss">https://www.welingelichtekringen.nl/?feed=rss2</feed>
   </section>
   <section>
+    <feed type="rss">https://api.buienradar.nl/data/xml/1.0/rssbuienradar</feed>
     <feed type="rss">http://nieuws.nl/feed/</feed>
     <feed type="rss">http://rss.politie.nl/rss/algemeen/ab/algemeen.xml</feed>
     <feed type="rss">http://www.blikopnieuws.nl/feeds/all/rss.xml</feed>
@@ -24,6 +25,6 @@
     <feed type="rss">http://www.metronieuws.nl/rss.xml</feed>
     <feed type="rss">http://www.rtlnieuws.nl/service/rss/nieuws/index.xml</feed>
     <feed type="rss">http://rss.fok.nl/feeds/nieuws</feed>
-    <feed type="rss">http://www.rss24.nl/rssfeed/new/</feed>
+    <feed type="rss">https://news.google.com/news/rss/headlines/section/topic/NATION.nl_nl/Nederland?ned=nl_nl&amp;hl=nl&amp;gl=NL</feed>
   </section>
 </page>

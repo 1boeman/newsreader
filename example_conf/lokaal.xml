@@ -1,13 +1,14 @@
 <page>
   <title>NL lokaal nieuws</title>
   <section>
-    <feed type="rss">http://www.at5.nl/feeds/at5/nieuws/V100/nieuws</feed>
-    <feed type="rss">http://www.nhnieuws.nl/feeds/rtvnh/nieuws/V100/nieuws</feed>
+    <feed type="rss">https://rss.at5.nl/rss</feed>
+    <feed type="rss">https://rss.nhnieuws.nl/rss</feed>
     <feed type="rss">http://rss.politie.nl/rss/ab/gemeenten/noord-holland/amsterdam.xml</feed>
     <feed type="rss">http://www.dvhn.nl/?service=rssOwnArticlesStandard</feed>
   </section>
   <section>
-    <feed type="rss">https://www.provinciegroningen.nl/rss/actueel/nieuws/</feed>
+    <feed type="rss">http://www.amstelveenweb.com/rss.php</feed>
+    <feed type="rss">https://www.parool.nl/amsterdam/rss.xml</feed>
     <feed type="rss">http://www.tubantia.nl/home/rss.xml</feed>
     <feed type="rss">http://www.bd.nl/home/rss.xml</feed>
     <feed type="rss">http://www.ed.nl/home/rss.xml</feed>
